@@ -1,0 +1,41 @@
+Register req.body : 
+
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "password": "password123",
+  "confirmPassword": "password123",
+  "phone_number": "1234567890",
+  "profile_pic_url": "https://example.com/profile_pic.jpg",
+  "shortTermGoals": "Ace upcoming exams",
+  "longTermGoals": "Graduate with honors",
+  "preferredSubjects": [
+    { "subjectName": "Mathematics", "priority": 1 },
+    { "subjectName": "Physics", "priority": 2 },
+    { "subjectName": "Biology", "priority": 3 }
+  ],
+  "preferredStudyTimes": [
+    { "dayOfWeek": "Monday", "timeOfDay": "Evening" },
+    { "dayOfWeek": "Tuesday", "timeOfDay": "Afternoon" },
+    { "dayOfWeek": "Wednesday", "timeOfDay": "Morning" }
+  ],
+  "studyEnvironment": "Quiet",
+  "learningMaterials": "Textbooks",
+  "availability": "Weekdays after 6 PM",
+  "timeConstraints": "Work from 9 AM to 5 PM",
+  "learningStyle": "Visual",
+  "learningPace": "Gradual",
+  "progressTracking": {
+    "frequency": "Weekly",
+    "notifications": true
+  },
+  "additionalInfo": "Interested in joining study groups"
+}
+
+Login req.body :
+
+{
+  "email": "john.doe@example.com",
+  "password": "password123"
+}
+
