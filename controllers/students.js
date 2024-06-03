@@ -31,16 +31,30 @@ const studentRegister = router.post(
         return res.status(400).json({ errors: [{ msg: 'Student already exists' }] });
       }
 
-      student = new Student({
+      // Construct the document to be saved
+      const studentFields = {
         name,
         email,
         password,
         phone_number,
         profile_pic_url,
-      });
+        shortTermGoals: null,
+        longTermGoals: null,
+        preferredSubjects: null,
+        preferredStudyTimes: null,
+        studyEnvironment: null,
+        learningMaterials: null,
+        availability: null,
+        timeConstraints: null,
+        learningStyle: null,
+        learningPace: null,
+        progressTracking: null,
+        additionalInfo: null
+      };
+
+      student = new Student(studentFields);
 
       const salt = await bcrypt.genSalt(10);
-
       student.password = await bcrypt.hash(password, salt);
 
       await student.save();
