@@ -26,7 +26,8 @@ const StudentSchema = new Schema({
       validator: function (v) {
         return /^\d{10}$/.test(v);
       },
-      message: (props) => `${props.value} is not a valid 10-digit phone number!`,
+      message: (props) =>
+        `${props.value} is not a valid 10-digit phone number!`,
     },
   },
   password: {
@@ -41,9 +42,11 @@ const StudentSchema = new Schema({
   // Additional Information
   shortTermGoals: {
     type: String,
+    default: null,
   },
   longTermGoals: {
     type: String,
+    default: null,
   },
   // Preferred Subjects
   preferredSubjects: [
@@ -63,7 +66,15 @@ const StudentSchema = new Schema({
     {
       dayOfWeek: {
         type: String,
-        enum: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        enum: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ],
       },
       timeOfDay: {
         type: String,
@@ -73,24 +84,30 @@ const StudentSchema = new Schema({
   ],
   studyEnvironment: {
     type: String,
+    default: null,
   },
   learningMaterials: {
     type: String,
+    default: null,
   },
   // Constraints
   availability: {
     type: String,
+    default: null,
   },
   timeConstraints: {
     type: String,
+    default: null,
   },
   // Learning Style
   learningStyle: {
     type: String,
     enum: ["Visual", "Auditory", "Kinesthetic"],
+    default: null,
   },
   learningPace: {
     type: String,
+    default: null,
   },
   // Progress Tracking
   progressTracking: {
@@ -106,6 +123,7 @@ const StudentSchema = new Schema({
   // Additional Information
   additionalInfo: {
     type: String,
+    default: null,
   },
 });
 
