@@ -7,7 +7,8 @@ const studyPlanSchema = new mongoose.Schema({
   dueTime: { type: String, required: true },
   category: { type: String, required: true },
   status: { type: String, required: true, default: "" },
-  progress: { type: String, required: true, default: "" }
+  progress: { type: String, required: true, default: "" },
+  studentId: { type: mongoose.Schema.Types.ObjectId, ref: 'Student', required: true }
 });
 
 const StudyPlan = mongoose.model('StudyPlan', studyPlanSchema);

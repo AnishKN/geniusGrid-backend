@@ -17,6 +17,7 @@ router.post(
     check("category", "Category is required").not().isEmpty(),
     check("status", "Status is required").not().isEmpty(),
     check("progress", "Progress is required").not().isEmpty(),
+    check("studentId", "Student ID is required").not().isEmpty().isMongoId()
   ],
   createStudyPlan
 );

@@ -8,8 +8,7 @@ const createStudyPlan = async (req, res) => {
     return res.status(400).json({ errors: errors.array() });
   }
 
-  const { title, desc, dueDate, dueTime, category, status, progress } =
-    req.body;
+  const { title, desc, dueDate, dueTime, category, status, progress, studentId } = req.body;
 
   try {
     const newStudyPlan = new StudyPlan({
@@ -20,14 +19,14 @@ const createStudyPlan = async (req, res) => {
       category,
       status,
       progress,
+      studentId,
     });
+
     await newStudyPlan.save();
-    res
-      .status(201)
-      .json({
-        message: "Study plan added successfully",
-        studyPlan: newStudyPlan,
-      });
+    res.status(201).json({
+      message: "Study plan added successfully",
+      studyPlan: newStudyPlan,
+    });
   } catch (error) {
     console.log("Error saving study plan: ", error);
     res.status(500).json({ message: "Server Error", error });
